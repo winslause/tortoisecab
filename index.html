@@ -30,33 +30,7 @@
     position: relative;
 }
 
-/* Adjust background for small devices */
-@media (max-width: 768px) {
-    .image-section {
-        background-size: contain; /* Ensures the image is fully visible without cropping */
-        background-repeat: no-repeat; /* Prevents repeating the background image */
-        height: auto; /* Adjust the height based on the image aspect ratio */
-    }
 
-    /* Adjust the text and button layout for smaller screens */
-    #welcomeCard {
-        padding: 20px;
-        text-align: center;
-    }
-
-    #welcomeCard p {
-        font-size: 1.5rem;
-    }
-
-    #welcomeCard h1 {
-        font-size: 2.5rem;
-    }
-
-    .btn {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-    }
-}
 
 
         /* Define the image slide-in keyframes */
@@ -144,6 +118,9 @@
 .scrolled {
     background-color: rgba(40, 167, 69, 0.5) !important;
 }
+ 
+    
+      
     </style>
     
 </head>
@@ -152,7 +129,7 @@
 <!-- Navbar Section -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="uniqueNavbar">
     <a class="navbar-brand" href="#">
-        <img style="padding: 10px; width: 100px; height: 100px; left:10px !important; border-radius: 50%;" src="images/totois.png" alt="Logo">
+        <img style="padding: 10px; width: 90px; height: 90px; left:10px !important; border-radius: 50%;" src="images/totois.png" alt="Logo">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -193,7 +170,6 @@
     </div>
 </section>
 
-<!-- our services Section -->
 <!-- Our Services Section -->
 <section id="about-us" class="container py-5">
   <h2 class="text-center mb-4">Our Services</h2>
@@ -206,7 +182,7 @@
       <div class="carousel-item active">
         <div class="row d-flex align-items-center">
           <div class="col-md-6">
-            <img src="images/hire2.jpg" class="d-block w-100" alt="Service 1">
+            <img src="images/hire2.jpg" class="d-block w-100" alt="Service 1" style="height: 300px; object-fit: cover;">
           </div>
           <div class="col-md-6">
             <h4>Individual Taxi Services</h4>
@@ -220,7 +196,7 @@
       <div class="carousel-item">
         <div class="row d-flex align-items-center">
           <div class="col-md-6">
-            <img src="images/image2.png" class="d-block w-100" alt="Service 2">
+            <img src="images/image2.png" class="d-block w-100" alt="Service 2" style="height: 300px; object-fit: cover;">
           </div>
           <div class="col-md-6">
             <h4>Chauffeur Driven Executive Vehicle Hire Services</h4>
@@ -234,7 +210,7 @@
       <div class="carousel-item">
         <div class="row d-flex align-items-center">
           <div class="col-md-6">
-            <img src="images/image3.png" class="d-block w-100" alt="Service 3">
+            <img src="images/image3.png" class="d-block w-100" alt="Service 3" style="height: 300px; object-fit: cover;">
           </div>
           <div class="col-md-6">
             <h4>Corporate Taxi Plans</h4>
@@ -257,6 +233,7 @@
     </button>
   </div>
 </section>
+
 <script>
   // Initialize the carousel instance
   const carouselElement = document.querySelector('#aboutCarousel');
