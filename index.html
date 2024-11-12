@@ -6,6 +6,7 @@
     <title>totoiscab</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Include Font Awesome -->
@@ -191,6 +192,27 @@ body {
   overflow: smooth !important;
   scroll-behavior: smooth !important;
 }
+
+
+/* Smooth transition for the booking form */
+#bookingForm {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* On showing the form, animate it */
+#bookingForm.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Styling for the Contact Us Section */
+#contactUsSection {
+  margin-top: 50px;
+  text-align: center;
+}
+
     </style>
     
 </head>
@@ -422,7 +444,33 @@ body {
 </section>
 
 
+<!-- Hidden Form for Booking -->
+<div id="bookingForm" class="container" style="display: none; margin: 20px; background-image: url('images/back.jpg'); background-size: cover; background-position: center; padding: 20px;">
 
+  <div class="card shadow-lg p-4 mt-4" style="border-radius: 15px;">
+    <h3 class="text-center" style="margin-top:80px;">Book Your Ride</h3>
+    <form id="rideForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="pickup" class="form-label">Pickup Location:</label>
+        <input type="text" id="pickup" name="pickup" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="dropoff" class="form-label">Dropoff Location:</label>
+        <input type="text" id="dropoff" name="dropoff" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="display: block; margin: 0 auto;">Submit</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+<!-- contact us section -->
 <section id="contact" class="py-5 bg-light">
   <div class="container">
     <div class="row justify-content-center">
@@ -469,6 +517,13 @@ body {
 
           <p class="mb-3"><i class="fas fa-map-marker-alt text-primary"></i> <strong>Location:</strong> 7
 th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p>
+<!-- Button to Trigger the Form Section -->
+<button id="bookRideBtn" class="btn btn-success mb-3">BOOK A RIDE</button>
+
+
+
+
+
           
         </div>
       </div>
@@ -482,6 +537,93 @@ th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p
 
 
 
+
+<h2 id="animatedTitle" class="mb-4" style="color: #198754;"></h2>
+
+
+<footer class="custom-footer">
+  <div class="footer-overlay">
+    <div class="footer-section bg-success-light">
+      <div class="container">
+        <div class="row align-items-center text-center">
+          <!-- Logo Section -->
+          <div class="col-md-4 mb-3 mb-md-0">
+            <img src="images/totois.png" alt="TotoisCabs Logo" class="footer-logo">
+          </div>
+          
+          <!-- Social Media Icons Section -->
+<div class="col-md-4 mb-3 mb-md-0">
+  <ul class="social-icons list-inline">
+    <li class="list-inline-item">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-primary">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-info">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-danger">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-secondary">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+          <!-- Contact Info Section -->
+          <div class="col-md-4">
+            <p class="mb-0">
+              <strong>Contact Us:</strong> +254 758 077188 <br>
+              <a href="mailto:totoiscabs@gmail.com" class="text-light">totoiscabs@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('bookRideBtn').addEventListener('click', function() {
+  // Get the form element
+  const bookingForm = document.getElementById('bookingForm');
+
+  // Show the form with animation
+  bookingForm.style.display = 'block';  // Make the form visible
+  setTimeout(() => {
+    bookingForm.classList.add('show');  // Apply animation after the form is visible
+  }, 10);  // Small delay to ensure the form is displayed before the animation starts
+  
+  // Scroll to the form to make it visible
+  bookingForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+document.getElementById('rideForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission to server
+
+  // Form data can be processed here if needed (e.g., sending to a server)
+
+  // Hide the form with animation after submission
+  const bookingForm = document.getElementById('bookingForm');
+  bookingForm.classList.remove('show'); // Remove animation class
+  
+  // Optional: Reset the form
+  document.getElementById('rideForm').reset();
+
+  // Hide the form after the animation finishes (to avoid abrupt hiding)
+  setTimeout(() => {
+    bookingForm.style.display = 'none';  // Make the form invisible after animation
+  }, 500);  // Match this timeout with the duration of the animation
+});
+
+</script>
 
 <script>
    // Select the navbar element
@@ -571,65 +713,8 @@ th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p
   // Start the smooth sliding process
   setTimeout(smoothSlide, 3000); // Start the cycle after 3 seconds
 </script>
-
-<h2 id="animatedTitle" class="mb-4" style="color: #198754;"></h2>
-
-
-<footer class="custom-footer">
-  <div class="footer-overlay">
-    <div class="footer-section bg-success-light">
-      <div class="container">
-        <div class="row align-items-center text-center">
-          <!-- Logo Section -->
-          <div class="col-md-4 mb-3 mb-md-0">
-            <img src="images/totois.png" alt="TotoisCabs Logo" class="footer-logo">
-          </div>
-          <!-- Social Media Icons Section -->
-          <!-- Social Media Icons Section -->
-<div class="col-md-4 mb-3 mb-md-0">
-  <ul class="social-icons list-inline">
-    <li class="list-inline-item">
-      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="text-primary">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="text-info">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-danger">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    <li class="list-inline-item">
-      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-secondary">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
-          <!-- Contact Info Section -->
-          <div class="col-md-4">
-            <p class="mb-0">
-              <strong>Contact Us:</strong> +254 758 077188 <br>
-              <a href="mailto:totoiscabs@gmail.com" class="text-light">totoiscabs@gmail.com</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-
-
-<!-- Bootstrap JS, jQuery, and Popper.js for Navbar Toggling -->
-<!-- jQuery for scroll effect -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!-- Include jQuery (before Bootstrap JS) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
