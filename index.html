@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harold Mbati Foundation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+        
+        /* Image section slide-in animation */
+        .image-section {
+            animation: slideInImage 2s ease-in-out; /* You can change this animation to any effect you want for the image */
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Define the image slide-in keyframes */
+        @keyframes slideInImage {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0; /* Fully transparent */
+            }
+            100% {
+                transform: translateY(0); /* Image back to its original position */
+                opacity: 1; /* Fully visible */
+            }
+        }
+
+        /* Initially hide the welcome card */
+        #welcomeCard {
+            display: none; /* Hide the card initially */
+            background: rgba(255, 255, 255, 0.6); /* Light background overlay */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Zoom-in animation for the welcome card */
+        .zoomInCard {
+            animation: zoomInCard 2s ease-in-out;
+        }
+
+        /* Define the zoom-in keyframes for the welcome card */
+        @keyframes zoomInCard {
+            0% {
+                transform: scale(0); /* Start with the card very small */
+                opacity: 0;          /* Fully transparent */
+            }
+            100% {
+                transform: scale(1); /* Normal size */
+                opacity: 1;          /* Fully visible */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="uniqueNavbar">
+    <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="Logo" width="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto d-flex flex-row justify-content-between">
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Our services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Available Cars</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">Contact Us</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link text-light" href="#">Donate</a>
+            </li> -->
+        </ul>
+    </div>
+</nav>
+
+<!-- Full-Width Image Section -->
+<section class="image-section full-section-image" style="background-image: url('images/image1.png');">
+    <!-- Welcome Card -->
+    <div id="welcomeCard">
+        <p class="display-4 text-center" style="font-size:medium;">WELCOME TO <br></p>
+        <h1 class="display-4 text-center"> Tortoise Cabs</h1>
+        <div class="text-center mt-3">
+            <a href="#" class="btn btn-success">Know More Bout Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS, jQuery, and Popper.js for Navbar Toggling -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // JavaScript to control when the welcome card appears
+    document.addEventListener('DOMContentLoaded', function () {
+        // Wait for the image animation to complete (2 seconds)
+        setTimeout(function () {
+            // Show the welcome card and apply the zoom-in animation
+            var welcomeCard = document.getElementById('welcomeCard');
+            welcomeCard.style.display = 'block'; // Make it visible
+            welcomeCard.classList.add('zoomInCard'); // Apply the zoom-in animation
+        }, 2000); // Match the delay with the image animation duration
+    });
+</script>
+
+</body>
+</html>

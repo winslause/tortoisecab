@@ -1,0 +1,45 @@
+ 
+        /* Image slow load from top */
+        .slow-load {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 2s forwards;
+        }
+
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Zoom out transition for welcome card */
+        .zoom-out {
+            transform: scale(1.5);
+            opacity: 0;
+            animation: zoomOut 2s forwards;
+        }
+
+        @keyframes zoomOut {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Sliding effect for individual navbar items */
+        .nav-item {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: transform 0.5s, opacity 0.5s;
+        }
+
+        .navbar-collapse.show .nav-item {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .nav-link {
+    color: white !important;
+}
+
+    
