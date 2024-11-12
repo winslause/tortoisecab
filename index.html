@@ -193,7 +193,8 @@
     </div>
 </section>
 
-<!-- our serces Section -->
+<!-- our services Section -->
+<!-- Our Services Section -->
 <section id="about-us" class="container py-5">
   <h2 class="text-center mb-4">Our Services</h2>
 
@@ -208,8 +209,7 @@
             <img src="images/hire2.jpg" class="d-block w-100" alt="Service 1">
           </div>
           <div class="col-md-6">
-            <h4>Individual Taxi Services
-</h4>
+            <h4>Individual Taxi Services</h4>
             <p>We offer personalized taxi services for your specific needs. Whether for business or leisure, our reliable drivers and well-maintained vehicles ensure a comfortable, seamless journey.</p>
             <a href="gallery.html" class="btn btn-success">Learn More</a>
           </div>
@@ -223,7 +223,7 @@
             <img src="images/image2.png" class="d-block w-100" alt="Service 2">
           </div>
           <div class="col-md-6">
-            <h4>Chauffer Driven Executive Vehicle Hire Services</h4>
+            <h4>Chauffeur Driven Executive Vehicle Hire Services</h4>
             <p>Experience luxury with our professional chauffeur-driven executive vehicles, providing comfort and style for your business or special events.</p>
             <a href="gallery.html" class="btn btn-success">Learn More</a>
           </div>
@@ -237,9 +237,8 @@
             <img src="images/image3.png" class="d-block w-100" alt="Service 3">
           </div>
           <div class="col-md-6">
-            <h4>Corporate Taxi Plans
-</h4>
-            <p>TotoisCabs offers flexible corporate taxi plans tailored to your business needs, ensuring reliable and efficient transportation for employees and clients.</p>
+            <h4>Corporate Taxi Plans</h4>
+            <p>TortoiseCabs offers flexible corporate taxi plans tailored to your business needs, ensuring reliable and efficient transportation for employees and clients.</p>
             <a href="gallery.html" class="btn btn-success">Learn More</a>
           </div>
         </div>
@@ -258,7 +257,35 @@
     </button>
   </div>
 </section>
+<script>
+  // Initialize the carousel instance
+  const carouselElement = document.querySelector('#aboutCarousel');
+  const carouselInstance = new bootstrap.Carousel(carouselElement, {
+    interval: false, // We will control the timing manually
+    wrap: true, // Allow the carousel to loop continuously
+  });
 
+  // Function to move the carousel smoothly without gaps
+  function smoothSlide() {
+    const activeSlide = carouselElement.querySelector('.carousel-item.active');
+    let nextSlide = activeSlide.nextElementSibling;
+
+    // If no next slide (end of carousel), loop back to the first
+    if (!nextSlide) {
+      nextSlide = carouselElement.querySelector('.carousel-item:first-child');
+    }
+
+    // Start moving the next slide in as the current slide moves out
+    activeSlide.classList.remove('active'); // Remove active class from current slide
+    nextSlide.classList.add('active'); // Add active class to the next slide
+
+    // After a short delay, continue with the next slide
+    setTimeout(smoothSlide, 3000); // Adjust 3000 for timing between slides
+  }
+
+  // Start the smooth sliding process
+  setTimeout(smoothSlide, 3000); // Start the cycle after 3 seconds
+</script>
 <!-- about our profile -->
 <section id="about-us1" class="container py-5" style="background-color: #072D4B; color: white !important;">
   <h2 class="text-center mb-4">About Totois Cabs & Travel</h2>
@@ -434,25 +461,7 @@ th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p
 
 
 
-<script>
-  // Ensure the carousel loops continuously
-  const carouselElement = document.querySelector('#aboutCarousel');
-  const carouselInstance = new bootstrap.Carousel(carouselElement, {
-    interval: 3000, // Time between slides (3 seconds)
-    wrap: true, // Allow the carousel to loop continuously
-    ride: 'carousel'
-  });
 
-  // This event listener ensures smooth looping
-  carouselElement.addEventListener('slid.bs.carousel', function () {
-    if (carouselInstance._activeElement === carouselInstance._items[carouselInstance._items.length - 1]) {
-      // When it reaches the last slide, reset to the first slide smoothly
-      setTimeout(() => {
-        carouselInstance.to(0); // Go to the first slide
-      }, 100); // Add a tiny delay for smoothness
-    }
-  });
-</script>
 <script>
    // Select the navbar element
     const navbar = document.querySelector('.navbar');
