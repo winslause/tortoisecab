@@ -305,7 +305,7 @@
     <div class="row">
       <div class="col-12 text-center">
         <!-- Add the title "OUR PACKAGES" -->
-        <h2 id="animatedTitle" class="mb-4">OUR PACKAGES</h2>
+        <h2 id="animatedTitle" class="mb-4 " style="color: #198754 !important;;"></h2>
       </div>
     </div>
     <div class="row">
@@ -486,26 +486,26 @@ th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p
     });
 </script>
 <script>
-  $(document).ready(function () {
-  var titleText = "Our Packages";
-  var index = 0;
-  
-  function typeTitle() {
-    if (index < titleText.length) {
-      $('#animatedTitle').append(titleText.charAt(index));
-      index++;
-      setTimeout(typeTitle, 400); // Speed of typing effect
+  document.addEventListener('DOMContentLoaded', function () {
+    var titleText = "OUR PACKAGES";
+    var index = 0;
+    var animatedTitle = document.getElementById('animatedTitle');
+    
+    function typeTitle() {
+      if (index < titleText.length) {
+        animatedTitle.innerHTML += titleText.charAt(index);
+        index++;
+        setTimeout(typeTitle, 400); // Speed of typing effect
+      }
     }
-  }
 
-  typeTitle();
-});
-
-
-
-
-
+    typeTitle();
+  });
 </script>
+
+<h2 id="animatedTitle" class="mb-4" style="color: #198754;"></h2>
+
+
 <!-- Bootstrap JS, jQuery, and Popper.js for Navbar Toggling -->
 <!-- jQuery for scroll effect -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
