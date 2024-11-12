@@ -18,17 +18,46 @@
 }
         
         /* Image section slide-in animation */
-        .image-section {
-            animation: slideInImage 2s ease-in-out; /* You can change this animation to any effect you want for the image */
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+.image-section {
+    animation: slideInImage 2s ease-in-out; /* Animation for image section */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-size: cover; /* Ensures the background image covers the entire area */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Adjust background for small devices */
+@media (max-width: 768px) {
+    .image-section {
+        background-size: contain; /* Ensures the image is fully visible without cropping */
+        background-repeat: no-repeat; /* Prevents repeating the background image */
+        height: auto; /* Adjust the height based on the image aspect ratio */
+    }
+
+    /* Adjust the text and button layout for smaller screens */
+    #welcomeCard {
+        padding: 20px;
+        text-align: center;
+    }
+
+    #welcomeCard p {
+        font-size: 1.5rem;
+    }
+
+    #welcomeCard h1 {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+}
+
 
         /* Define the image slide-in keyframes */
         @keyframes slideInImage {
@@ -138,7 +167,7 @@
         <p class="display-4 text-center" style="font-size:large;">WELCOME TO <br></p>
         <h1 class="display-4 text-center" style="font-size: 50px; font-weight: bold;font-family:'Times New Roman', Times, serif; color:rgb(8, 80, 104);"> TotoisCabs</h1>
         <div class="text-center mt-3">
-            <a href="#about-us1" class="btn btn-success">Know More Bout Us</a>
+            <a href="#about-us1" class="btn btn-success" style="font-size:small !important;">Know More About Us</a>
         </div>
     </div>
 </section>
