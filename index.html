@@ -121,8 +121,29 @@
   border-radius: 50%; /* Circular background */
 }
 
+/* Navbar Styling */
+#uniqueNavbar {
+    position: fixed; /* Fixed at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1030; /* Ensure it stays above other content */
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
 
+/* Default navbar color (black) */
+#uniqueNavbar.navbar-dark {
+    background-color: #000; /* Black background */
+}
 
+/* Navbar color on scroll */
+#uniqueNavbar.scrolled {
+    background-color: #28a745; /* Light green background */
+}
+/* When scrolling down, the navbar will have a background color of rgba(0, 86, 179, 0.5) */
+.scrolled {
+    background-color: rgba(40, 167, 69, 0.5) !important;
+}
     </style>
     
 </head>
@@ -131,8 +152,8 @@
 <!-- Navbar Section -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="uniqueNavbar">
     <a class="navbar-brand" href="#">
-    <img style="padding: 10px; width: 100px; height: 100px; left:10px !important; border-radius: 50%;" src="images/totois.png" alt="Logo">
-</a>
+        <img style="padding: 10px; width: 100px; height: 100px; left:10px !important; border-radius: 50%;" src="images/totois.png" alt="Logo">
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -153,12 +174,12 @@
             <li class="nav-item">
                 <a class="nav-link text-light" href="#contact" style="padding: 10px;">Contact Us</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link text-light" href="#">Donate</a>
-            </li> -->
         </ul>
     </div>
 </nav>
+
+
+
 
 <!-- Full-Width Image Section -->
 <section class="image-section full-section-image" style="background-image: url('images/hire2.jpg');">
@@ -273,7 +294,7 @@
 
 
 
-<!-- packaes section -->
+
  <!-- packages section -->
  <section id="packages" class="py-5">
   <div class="container">
@@ -378,8 +399,8 @@
             <label for="message" class="font-weight-bold">Your Message</label>
             <textarea class="form-control form-control-lg" id="message" rows="5" placeholder="Enter your message" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-block btn-lg" style="width: auto; display: block; 
-  margin: 0 auto;  border-radius: 6px;">Send Message</button>
+          <button type="submit" class="btn btn-success btn-block btn-lg" style="width: auto; display: block; 
+  margin: 0 auto;  border-radius: 6px; background-color:#28a745 !important;">Send Message</button>
         </form>
       </div>
       <!-- Contact Details -->
@@ -432,6 +453,28 @@ th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p
     }
   });
 </script>
+<script>
+   // Select the navbar element
+    const navbar = document.querySelector('.navbar');
+
+    // Add a scroll event listener to change the navbar background color
+    window.addEventListener('scroll', () => {
+        // Check if the page has scrolled down
+        if (window.scrollY > 0) {
+            // Add the 'scrolled' class to change the background color
+            navbar.classList.add('scrolled');
+        } else {
+            // Remove the 'scrolled' class when at the top of the page
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+	window.onload = function() {
+		document.querySelector('.loader-container').style.display = 'none';
+	};
+
+
+</script>
 
 
 
@@ -439,11 +482,7 @@ th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p
 
 
 
-<!-- Bootstrap JS, jQuery, and Popper.js for Navbar Toggling -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
 <script>
@@ -467,14 +506,26 @@ th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p
     if (index < titleText.length) {
       $('#animatedTitle').append(titleText.charAt(index));
       index++;
-      setTimeout(typeTitle, 300); // Speed of typing effect
+      setTimeout(typeTitle, 400); // Speed of typing effect
     }
   }
 
   typeTitle();
 });
 
+
+
+
+
 </script>
+<!-- Bootstrap JS, jQuery, and Popper.js for Navbar Toggling -->
+<!-- jQuery for scroll effect -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
