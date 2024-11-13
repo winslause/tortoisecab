@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  
+  
+</head>
+<body>
+
+<!-- Toggle button for mobile view -->
+<button class="btn toggle-sidebar d-md-none"><i class="fas fa-bars"></i></button>
+
+<!-- Sidebar -->
+<nav class="sidebar d-flex flex-column p-3">
+  <div class="sidebar-heading">Admin Panel</div>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="home.html" class="nav-link active">
+        <i class="fas fa-tachometer-alt"></i>
+        Dashboard
+      </a>
+    </li>
+    <li>
+  <a href="managebookings.html" class="nav-link">
+    <i class="fas fa-calendar-check"></i>
+    Manage Bookings
+  </a>
+</li>
+    <li>
+      <a href="managevehicles.html" class="nav-link">
+        <i class="fas fa-images"></i>
+        Manage Gallery
+      </a>
+    </li>
+    <li>
+      <a href="manageusers.html" class="nav-link">
+        <i class="fas fa-users"></i>
+        Manage Users
+      </a>
+    </li>
+    <li>
+      <a href="managedrivers.html" class="nav-link">
+        <i class="fas fa-car"></i>
+        Manage Drivers
+      </a>
+    </li>
+    <li>
+      <a href="contactus.html" class="nav-link">
+        <i class="fas fa-envelope"></i>
+        Contact Us
+      </a>
+    </li>
+    <li>
+      <a href="logout.html" class="nav-link">
+        <i class="fas fa-sign-out-alt"></i>
+        Logout
+      </a>
+    </li>
+    <li>
+      <a href="changepassword.html" class="nav-link">
+        <i class="fas fa-key"></i>
+        Change Password
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Content Section -->
+<div class="content p-4">
+  <!-- manage clients -->
+   <section id="our-clients" class="container my-5">
+  <h2 class="text-center mb-4">Our Clients</h2>
+  
+  <!-- Table for Bookings -->
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Client Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>ID Number</th>
+          <th>Vehicle Type</th>
+          <th>Date/Time to be Picked</th>
+          <th>Date/Time to be Returned</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example Row -->
+        <tr>
+          <td>John Doe</td>
+          <td>johndoe@example.com</td>
+          <td>+254700123456</td>
+          <td>12345678</td>
+          <td>XYZ-1234</td>
+          <td>2024-11-13 10:00 AM</td>
+          <td>2024-11-14 10:00 AM</td>
+          <td>2024-11-14 10:00 AM</td>
+          <td>
+            
+            
+            <button class="btn btn-warning btn-sm" data-bs-toggle="tooltip" title="View and assign veicle">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-danger btn-sm" data-bs-toggle="tooltip" title="Reject and Delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+          
+        </tr>
+        <!-- More rows would be added here -->
+         <tr>
+          <td>John Doe</td>
+          <td>johndoe@example.com</td>
+          <td>+254700123456</td>
+          <td>12345678</td>
+          <td>XYZ-1234</td>
+          <td>2024-11-13 10:00 AM</td>
+          <td>2024-11-14 10:00 AM</td>
+          <td>
+            
+            
+            <button class="btn btn-warning btn-sm" data-bs-toggle="tooltip" title="View and assign veicle">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-danger btn-sm" data-bs-toggle="tooltip" title="Reject and Delete">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+  
+</div>
+
+<!-- Bootstrap 5 JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Toggle sidebar in mobile view
+  const toggleSidebar = document.querySelector('.toggle-sidebar');
+  const sidebar = document.querySelector('.sidebar');
+  
+  toggleSidebar.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Enable tooltips
+  document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>
+
+
+</body>
+</html>

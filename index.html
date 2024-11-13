@@ -455,19 +455,149 @@ body {
         <input type="text" id="name" name="name" class="form-control" required>
       </div>
       <div class="mb-3">
+        <label for="pickup" class="form-label">Email:</label>
+        <input type="email" id="pickup" name="email" class="form-control" required>
+      
+      </div>
+      <div class="mb-3">
+        <label for="pickup" class="form-label">Phone Number:</label>
+        <input type="number" id="pickup" name="phone" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="pickup" class="form-label">ID Number:</label>
+        <input type="number" id="pickup" name="idnumber" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="pickup" class="form-label">Pickup Date/Time:</label>
+        <input type="text" id="pickup" name="ptime" class="form-control" required>
+      </div>
+      <div class="mb-3">
         <label for="pickup" class="form-label">Pickup Location:</label>
         <input type="text" id="pickup" name="pickup" class="form-control" required>
       </div>
       <div class="mb-3">
-        <label for="dropoff" class="form-label">Dropoff Location:</label>
-        <input type="text" id="dropoff" name="dropoff" class="form-control" required>
+        <label for="pickup" class="form-label">Pickup Location:</label>
+        <input type="text" id="pickup" name="pickup" class="form-control" required>
       </div>
+      <div class="mb-3">
+        <label for="dropoff" class="form-label">Date/Time to return(optional):</label>
+        <input type="text" id="dropoff" name="dreturn" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="dropoff" class="form-label">Vehicle Type:</label>
+        <input type="text" id="dropoff" name="vtype" class="form-control" required>
+      </div>
+      
       <button type="submit" class="btn btn-primary" style="display: block; margin: 0 auto;">Submit</button>
-
+<div class="modal-footer justify-content-center">
+        <p>Don't have an account? <a href="#register-section" id="showRegisterLink" data-bs-dismiss="modal">Register</a></p>
+      </div>
     </form>
   </div>
 </div>
 
+<!-- hidden form for register -->
+ 
+<section id="register-section" class="my-5 text-light"  style=" display:none; margin: 20px; background-image: url('images/back.jpg'); background-size: cover; background-position: center; padding: 20px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4" style="margin-top:100px;">Register</h2>
+        <form>
+          <!-- Name Input -->
+          <div class="mb-3">
+            <label for="register-name" class="form-label">Full Name</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+              <input type="text" class="form-control" id="register-name" placeholder="Enter your name" required>
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div class="mb-3">
+            <label for="register-email" class="form-label">Email Address</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              <input type="email" class="form-control" id="register-email" placeholder="Enter your email" required>
+            </div>
+          </div>
+
+          <!-- Phone Input -->
+          <div class="mb-3">
+            <label for="register-phone" class="form-label">Phone Number</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-phone"></i></span>
+              <input type="text" class="form-control" id="register-phone" placeholder="Enter your phone number" required>
+            </div>
+          </div>
+
+          <!-- Password Input -->
+          <div class="mb-3">
+            <label for="register-password" class="form-label">Password</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              <input type="password" class="form-control" id="register-password" placeholder="Enter your password" required>
+            </div>
+          </div>
+
+          <!-- Confirm Password Input -->
+          <div class="mb-3">
+            <label for="register-confirm-password" class="form-label">Confirm Password</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              <input type="password" class="form-control" id="register-confirm-password" placeholder="Confirm your password" required>
+            </div>
+          </div>
+
+          <!-- Register Button -->
+          <button type="submit" class="btn btn-success w-100 mb-3">Register</button>
+
+          <!-- Already Registered? Login link -->
+          <p class="text-center">Already registered? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <!-- Email Input -->
+          <div class="mb-3">
+            <label for="login-email" class="form-label">Email Address</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              <input type="email" class="form-control" id="login-email" placeholder="Enter your email" required>
+            </div>
+          </div>
+
+          <!-- Password Input -->
+          <div class="mb-3">
+            <label for="login-password" class="form-label">Password</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              <input type="password" class="form-control" id="login-password" placeholder="Enter your password" required>
+            </div>
+          </div>
+
+          <!-- Login Button -->
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <p>Don't have an account? <a href="#register-section" data-bs-dismiss="modal">Register</a></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- contact us section -->
@@ -589,6 +719,24 @@ th Floor Century Gardens, Kindaruma Road | P. O. Box 52200 – 00100, Nairobi</p
     </div>
   </div>
 </footer>
+
+<script>
+  document.getElementById('showRegisterLink').addEventListener('click', function() {
+    // Get the register section element
+    const registerSection = document.getElementById('register-section');
+
+    // Show the registration form
+    registerSection.style.display = 'block';  // Make the section visible
+
+    // Add a small delay to allow the section to be displayed before scrolling
+    setTimeout(() => {
+      // Scroll to the register section smoothly
+      registerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 10);
+  });
+</script>
+
+
 
 <script>
   document.getElementById('bookRideBtn').addEventListener('click', function() {
